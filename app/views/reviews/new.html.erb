@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6">
+      <div class="card shadow-sm border-0 rounded-3 p-4">
+        <h3 class="mb-4">Add a Review for <%= @restaurant.name %></h3>
+
+        <!-- Notice the array syntax [@restaurant, @review] for nested resources -->
+        <%= simple_form_for [@restaurant, @review] do |f| %>
+          <%= f.input :content, placeholder: "How was your experience?" %>
+
+          <!-- We can pass a range of 0..5 for the rating collection -->
+          <%= f.input :rating, collection: 0..5, prompt: "Rate your meal" %>
+
+          <%= f.submit "Submit Review", class: "btn btn-primary w-100 mt-3 fw-bold" %>
+        <% end %>
+
+        <div class="mt-3 text-center">
+          <%= link_to "Cancel", restaurant_path(@restaurant), class: "text-muted text-decoration-none" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

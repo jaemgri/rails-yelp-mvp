@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>All Restaurants</h1>
+    <%= link_to "Add Restaurant", new_restaurant_path, class: "btn btn-primary" %>
+  </div>
+
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <!-- This link_to makes the name clickable! -->
+            <h5 class="card-title fw-bold">
+              <%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none text-dark" %>
+            </h5>
+
+            <h6 class="card-subtitle mb-2 text-muted"><%= restaurant.category.capitalize %></h6>
+            <p class="card-text"><i class="fas fa-map-marker-alt"></i> <%= restaurant.address %></p>
+            <p class="card-text"><i class="fas fa-phone"></i> <%= restaurant.phone_number %></p>
+
+            <!-- Added a explicit button for better usability -->
+            <%= link_to "View details", restaurant_path(restaurant), class: "btn btn-outline-primary btn-sm" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

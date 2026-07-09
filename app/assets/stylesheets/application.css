@@ -1,10 +1,50 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+/* 1. Global Reset & Typography */
+body {
+font-family: 'Inter', sans-serif;
+background-color: #f7f9fc;
+color: #334155;
+padding-bottom: 50px;
+}
+
+/* 2. Enhanced Card Styling */
+.card {
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+border-radius: 12px !important;
+border: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+.card-img-top {
+border-radius: 12px 12px 0 0 !important;
+}
+
+/* 3. Button Polish */
+.btn-primary {
+background-color: #4f46e5 !important;
+border: none !important;
+border-radius: 8px !important;
+padding: 10px 20px !important;
+font-weight: 600;
+}
+
+.btn-primary:hover {
+background-color: #4338ca !important;
+}
+
+/* 4. Navbar-like spacing */
+h1 {
+font-weight: 700;
+color: #0f172a;
+letter-spacing: -0.5px;
+}
+
+/* 5. Review Section Polish */
+.list-group-item {
+border-left: none !important;
+border-right: none !important;
+padding: 1.5rem 0 !important;
+}
